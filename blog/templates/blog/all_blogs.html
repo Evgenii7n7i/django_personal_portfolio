@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+
+<h1>{{ title }}</h1>
+
+
+
+{% block content %}
+<div class="text-center">
+    <h2>Я написал {{ blogs.count }} блог(ов)</h2>
+</div>
+ 
+<div class="row">
+    {% for blog in blogs %}
+        <div class="col">
+            <div class="p-3 mb-2 bg-light text-dark">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ blog.title_blog }}</h5>
+                        <p class="card-text">{{ blog.description_blog|safe|truncatechars:100 }}</p>
+                        <i>{{ blog.date }}</i>
+                        <a href="{% url 'blog:detail' blog.id %}" class="btn btn-primary stretched-link">Читать пост</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

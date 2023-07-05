@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+ 
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center">My Portfolio</h1>
+
+    
+    <div class="row">
+        {% for p in project %}
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <img src="{{ p.image.url }}" class="card-img-top" alt="{{ p.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.title }}</h5>
+                    <p class="card-text">{{ p.description }}</p>
+                    {% if p.url %}
+                    <a href="{{ p.url }}" class="btn btn-primary">{{p.title}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
