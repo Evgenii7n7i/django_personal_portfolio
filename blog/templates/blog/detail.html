@@ -8,8 +8,15 @@
 
 
 
-<h2>{{ blog.title_blog }}</h2>
-<p class="text-start">{{ blog.description_blog|safe }}</p>
-<i>{{ blog.date }}</i>
+<div class="container" center>
+ 	<div class="text-center">
+ 		<h2>{{ blog.title_blog }}</h2>
+  	</div>
+  <p class="text-center">{{ blog.description_blog|safe }}</p>
+  <i>{{ blog.date }}</i>
+  <br>
+  <br>
+  <a href="{% url 'blog:all_blogs' %}" class="btn btn-primary ">Вернуться к блогу</a>
+</div>
 
 {% endblock content %}
