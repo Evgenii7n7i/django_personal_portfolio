@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mms8ziifww0sv5z-zt8!+s7r#45-e5$ga)2t40_k#u31y+2_ml
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['jekaneizvestnyi.pythonanywhere.com']
 
 # Application definition
 
@@ -118,6 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # MEDIA_ROOT создал специально чтобы файлы сохранялись в определенном месте
 MEDIA_ROOT = BASE_DIR / 'media'
