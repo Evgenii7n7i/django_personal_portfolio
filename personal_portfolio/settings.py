@@ -129,3 +129,14 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+'''
+Блок кода который будет определять локальный или сетевой
+вариант настроек
+'''
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('Это не локальная версия проекта!')
