@@ -278,11 +278,14 @@ footer .footer-item {
   .todo-details form:not(:last-child) {
     margin-bottom: 10px;
   }
-}
-
- a.portfolio {
-    font-size: 14px; /* Изменение размера текста на маленьких экранах */
-    text-align: center;
+  
+  /* Скрываем футер на маленьких экранах */
+  footer {
+    display: none;
   }
 }
 
+a.portfolio {
+    font-size: 14px; /* Изменение размера текста на маленьких экранах */
+    text-align: center;
+}

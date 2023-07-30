@@ -13,10 +13,8 @@
 <body>
 	<div class="wrapper">
 		<header>
-			
 			<h1>Это сайт задачник</h1>
-
-{% if user.is_authenticated %}
+			{% if user.is_authenticated %}
 			<div class="greeting">
 				<p><span>{{ user.username }}</span></p>
 			</div>
@@ -24,7 +22,7 @@
   				{% csrf_token %}
   				<button type="submit" class="btn-login">Выйти</button>
 			</form>
-{% endif %}
+			{% endif %}
 		</header>
 			
 		<main>
@@ -33,8 +31,9 @@
 			{% endblock %}
 		</main>
 
-		{% if user.is_authenticated %}		
+		{% if user.is_authenticated %}
 		<footer>
+			{% if not hide_footer %}
 			<div class="footer-item">
 				<a class="btn-login" href="{% url 'completedtodos' %}">Посмотреть выполненные</a>
 			</div>
@@ -43,7 +42,8 @@
 			</div>
 			<div class="footer-item">
 				<a class="btn-login" href="{% url 'createtodo' %}">Добавить задание</a>
-			</div>		
+			</div>
+			{% endif %}
 		</footer>
 		{% endif %}
 	</div>
